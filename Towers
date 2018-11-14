@@ -9,6 +9,7 @@ public class Towers : MonoBehaviour {
 
 	//public int damagePerShot;
 	public float timeBetweenShots = 1f;
+	public int damage;
 
 
 	private void Start () 
