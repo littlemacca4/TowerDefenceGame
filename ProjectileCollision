@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class ProjectileCollision : MonoBehaviour {
 
-	public int damage;
-
-
 	void Awake()
 		{
-			var enemyHealth = GameObject.FindWithTag("Enemy").GetComponent<EnemyHealth>().currentHealth;
+			takeDamage = GetComponent<EnemyHealth>().TakeDamage;
 		}
 	private void OnTriggerEnter2D(Collider2D other)
 		{	
-			enemyHealth -= damage;
-			//Destroy(gameObject);
+			Destroy(gameObject);
 		} 
 }
