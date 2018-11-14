@@ -8,12 +8,14 @@ public class EnemyHealth : MonoBehaviour {
 
 	public int startingHealth;
 	public int currentHealth;
+	int damageReceived;
 
 
 	// Use this for initialization
 	private void Start () 
 	{
-
+		currentHealth = startingHealth;
+		damageReceived = GameObject.FindWithTag("Tower").GetComponent<Towers>().damage;
 	}
 	
 	// Update is called once per frame
@@ -24,7 +26,13 @@ public class EnemyHealth : MonoBehaviour {
 
 	public void TakeDamage()
 	{
-	
+		Debug.Log(currentHealth -= damageReceived);
+		if(currentHealth <= 0)
+			{
+				currentHealth = 0;
+				Debug.Log("Dead");
+			}
 	}
+
 
 }
